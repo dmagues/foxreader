@@ -44,6 +44,33 @@ FROM            ITEM</CommandText>
             </Mappings>
             <Sources />
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="OrdenesTableAdapter" GeneratorDataComponentClassName="OrdenesTableAdapter" Name="Ordenes" UserDataComponentName="OrdenesTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillORDENES" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetDataORDENES" GeneratorSourceName="FillORDENES" GetMethodModifier="Public" GetMethodName="GetDataORDENES" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataORDENES" UserSourceName="FillORDENES">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT        fecha, comprobant, tipo_movi, cod_item, clase_cod, precio_uni, prestamo, itm, cod_alt, cant_ing, cant_egr 
+FROM            ORDENES</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="fecha" DataSetColumn="fecha" />
+              <Mapping SourceColumn="comprobant" DataSetColumn="comprobant" />
+              <Mapping SourceColumn="tipo_movi" DataSetColumn="tipo_movi" />
+              <Mapping SourceColumn="cod_item" DataSetColumn="cod_item" />
+              <Mapping SourceColumn="clase_cod" DataSetColumn="clase_cod" />
+              <Mapping SourceColumn="precio_uni" DataSetColumn="precio_uni" />
+              <Mapping SourceColumn="prestamo" DataSetColumn="prestamo" />
+              <Mapping SourceColumn="itm" DataSetColumn="itm" />
+              <Mapping SourceColumn="cod_alt" DataSetColumn="cod_alt" />
+              <Mapping SourceColumn="cant_ing" DataSetColumn="cant_ing" />
+              <Mapping SourceColumn="cant_egr" DataSetColumn="cant_egr" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
@@ -130,6 +157,65 @@ FROM            ITEM</CommandText>
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Ordenes" msprop:Generator_TableClassName="OrdenesDataTable" msprop:Generator_TableVarName="tableOrdenes" msprop:Generator_RowChangedName="OrdenesRowChanged" msprop:Generator_TablePropName="Ordenes" msprop:Generator_RowDeletingName="OrdenesRowDeleting" msprop:Generator_RowChangingName="OrdenesRowChanging" msprop:Generator_RowEvHandlerName="OrdenesRowChangeEventHandler" msprop:Generator_RowDeletedName="OrdenesRowDeleted" msprop:Generator_RowClassName="OrdenesRow" msprop:Generator_UserTableName="Ordenes" msprop:Generator_RowEvArgName="OrdenesRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="fecha" msprop:Generator_ColumnVarNameInTable="columnfecha" msprop:Generator_ColumnPropNameInRow="fecha" msprop:Generator_ColumnPropNameInTable="fechaColumn" msprop:Generator_UserColumnName="fecha" type="xs:dateTime" />
+              <xs:element name="comprobant" msprop:Generator_ColumnVarNameInTable="columncomprobant" msprop:Generator_ColumnPropNameInRow="comprobant" msprop:Generator_ColumnPropNameInTable="comprobantColumn" msprop:Generator_UserColumnName="comprobant">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="tipo_movi" msprop:Generator_ColumnVarNameInTable="columntipo_movi" msprop:Generator_ColumnPropNameInRow="tipo_movi" msprop:Generator_ColumnPropNameInTable="tipo_moviColumn" msprop:Generator_UserColumnName="tipo_movi">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="cod_item" msprop:Generator_ColumnVarNameInTable="columncod_item" msprop:Generator_ColumnPropNameInRow="cod_item" msprop:Generator_ColumnPropNameInTable="cod_itemColumn" msprop:Generator_UserColumnName="cod_item">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="13" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="clase_cod" msprop:Generator_ColumnVarNameInTable="columnclase_cod" msprop:Generator_ColumnPropNameInRow="clase_cod" msprop:Generator_ColumnPropNameInTable="clase_codColumn" msprop:Generator_UserColumnName="clase_cod">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="6" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="precio_uni" msprop:Generator_ColumnVarNameInTable="columnprecio_uni" msprop:Generator_ColumnPropNameInRow="precio_uni" msprop:Generator_ColumnPropNameInTable="precio_uniColumn" msprop:Generator_UserColumnName="precio_uni" type="xs:decimal" />
+              <xs:element name="prestamo" msprop:Generator_ColumnVarNameInTable="columnprestamo" msprop:Generator_ColumnPropNameInRow="prestamo" msprop:Generator_ColumnPropNameInTable="prestamoColumn" msprop:Generator_UserColumnName="prestamo">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="itm" msprop:Generator_ColumnVarNameInTable="columnitm" msprop:Generator_ColumnPropNameInRow="itm" msprop:Generator_ColumnPropNameInTable="itmColumn" msprop:Generator_UserColumnName="itm">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="cod_alt" msprop:Generator_ColumnVarNameInTable="columncod_alt" msprop:Generator_ColumnPropNameInRow="cod_alt" msprop:Generator_ColumnPropNameInTable="cod_altColumn" msprop:Generator_UserColumnName="cod_alt">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="cant_ing" msprop:Generator_ColumnVarNameInTable="columncant_ing" msprop:Generator_ColumnPropNameInRow="cant_ing" msprop:Generator_ColumnPropNameInTable="cant_ingColumn" msprop:Generator_UserColumnName="cant_ing" type="xs:decimal" />
+              <xs:element name="cant_egr" msprop:Generator_ColumnVarNameInTable="columncant_egr" msprop:Generator_ColumnPropNameInRow="cant_egr" msprop:Generator_ColumnPropNameInTable="cant_egrColumn" msprop:Generator_UserColumnName="cant_egr" type="xs:decimal" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

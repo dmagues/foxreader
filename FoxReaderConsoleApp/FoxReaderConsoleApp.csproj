@@ -43,6 +43,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FoxDataAccess.cs" />
+    <Compile Include="FoxDS.cs">
+      <DependentUpon>FoxDS.xsd</DependentUpon>
+    </Compile>
     <Compile Include="FoxDS.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

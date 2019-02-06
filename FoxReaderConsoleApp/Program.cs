@@ -13,7 +13,8 @@ namespace FoxReaderConsoleApp
     {
         static void Main(string[] args)
         {
-            //var foxDA = new FoxDataAccess();
+            var foxDA = new FoxDataAccess();
+            var data = foxDA.GetData("ORDENES.DBF");
             var ta = new ItemTableAdapter();
             var sqlta = new ITEMTableAdapter();
             var sqlDt = new SqlServerDS.ITEMDataTable();
